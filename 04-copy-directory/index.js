@@ -5,7 +5,7 @@ const filesFolder = path.join(__dirname, 'files');
 const filesCopyFolder = path.join(__dirname, 'files-copy');
 const copy = promis.copyFile;
 
-fs.mkdir(filesCopyFolder, (error) => {
+fs.mkdir(filesCopyFolder, { recursive: true }, (error) => {
   if (error) {
     throw new Error('Error: unable to create directory');
   } else {
